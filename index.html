@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yapon tili va kasbiy malaka test markazi — O'zbekistondan Yaponiyaga qonuniy yo'l</title>
+<meta name="description" content="Yapon tili o'rgatish, JLPT/JFT tayyorlov, Tokutei Ginou sertifikatlash va Yaponiyada qonuniy ish joylashish. Bandlik vazirligi, JICA hamkorligi. 2018 yildan. 12 viloyatda filiallar.">
+<meta name="keywords" content="yapon tili, Yaponiya ish, Tokutei Ginou, JLPT, kaigo, qurilish, yapon tili kurslari, Uzbekistan Japan">
+<meta name="author" content="Yapon tili va kasbiy malaka test markazi">
+<meta property="og:title" content="Yapon tili va kasbiy malaka test markazi">
+<meta property="og:description" content="O'zbekistondan Yaponiyaga qonuniy yo'l — til o'rgatishdan ish joylashishgacha. 5000+ bitiruvchi, 12 filial, 60+ yapon kompaniya hamkori.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C9111A;
+  --red-dark:#9A0D13;
+  --red-light:#E8593C;
+  --black:#090909;
+  --black-2:#141414;
+  --black-3:#1E1E1E;
+  --white:#FFFFFF;
+  --off-white:#F5F3EE;
+  --gray:#8A8A8A;
+  --gray-light:#D4D0C8;
+  --border:#2A2A2A;
+  --border-light:#EBEBEB;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html, body{
+  overflow-x:hidden;
+  max-width:100%;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--off-white);
+  color:var(--black);
+}
+
+/* ── SCROLLBAR ─────────────────────────────── */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--off-white)}
+::-webkit-scrollbar-thumb{background:var(--red)}
+
+/* ── NAV ────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:72px;
+  background:rgba(245,243,238,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid var(--border-light);
+  transition:all .3s;
+}
+.nav-logo{display:flex;align-items:center;text-decoration:none;overflow:hidden}
+.nav-logo-mark{
+  height:72px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;overflow:hidden;
+}
+.nav-logo-mark img{height:140px;width:auto;object-fit:contain;margin:-10px -20px -10px -28px}
+.nav-hamburger{
+  display:none;background:none;border:none;cursor:pointer;
+  width:32px;height:32px;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.nav-hamburger span{
+  display:block;width:20px;height:1.5px;background:var(--black);transition:all .3s;
+}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+.mobile-nav{
+  display:none;position:fixed;top:72px;left:0;right:0;z-index:99;
+  background:rgba(245,243,238,0.98);backdrop-filter:blur(16px);
+  padding:24px;border-bottom:0.5px solid var(--border-light);
+  flex-direction:column;gap:16px;
+  animation:fadeUp .3s ease;
+}
+.mobile-nav.show{display:flex}
+.mobile-lang-switcher{
+  display:none;align-items:center;gap:8px;padding-bottom:16px;
+  border-bottom:0.5px solid var(--border-light);
+}
+.mobile-nav a{
+  font-size:15px;color:var(--black);text-decoration:none;
+  padding:8px 0;border-bottom:0.5px solid var(--border-light);
+  display:block;
+}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+  font-size:13px;color:var(--black);text-decoration:none;
+  letter-spacing:.02em;opacity:.7;transition:opacity .2s;
+}
+.nav-links a:hover{opacity:1}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang-btn{
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:.1em;
+  background:transparent;border:0.5px solid var(--black);
+  padding:5px 10px;cursor:pointer;color:var(--black);
+  transition:all .2s;
+}
+.lang-btn.active, .lang-btn:hover{background:var(--black);color:var(--white)}
+.nav-cta{
+  background:var(--red);color:var(--white);
+  font-size:12px;letter-spacing:.05em;font-weight:500;
+  padding:9px 20px;border:none;cursor:pointer;
+  text-decoration:none;transition:background .2s;
+}
+.nav-cta:hover{background:var(--red-dark)}
+
+/* ── HERO ───────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  background:var(--black);
+  display:grid;
+  grid-template-rows:1fr auto;
+  padding-top:72px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Rising sun background graphic */
+.hero-sun{
+  position:absolute;
+  right:-120px;top:50%;
+  transform:translateY(-50%);
+  width:680px;height:680px;
+  opacity:.07;
+  pointer-events:none;
+}
+.hero-sun svg{width:100%;height:100%}
+
+/* Red vertical line accent */
+.hero-line{
+  position:absolute;left:46px;top:72px;bottom:0;
+  width:1px;background:var(--red);opacity:.4;
+}
+
+.hero-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:80px 48px 60px 80px;
+  gap:60px;
+}
+
+.hero-left{animation:fadeUp .9s ease both}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:36px;
+}
+.hero-eyebrow-line{width:32px;height:1px;background:var(--red)}
+.hero-eyebrow span{
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:.15em;color:var(--red);
+  text-transform:uppercase;
+}
+
+.hero-h1{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(42px,5.5vw,76px);
+  font-weight:700;
+  line-height:1.1;
+  color:var(--white);
+  margin-bottom:32px;
+  letter-spacing:-.02em;
+}
+.hero-h1 .ja{
+  display:block;
+  font-size:.48em;
+  font-weight:300;
+  color:var(--red);
+  letter-spacing:.1em;
+  margin-bottom:8px;
+  opacity:.8;
+}
+.hero-h1 em{font-style:normal;color:var(--red)}
+
+.hero-sub{
+  font-size:16px;line-height:1.8;color:var(--gray);
+  max-width:460px;margin-bottom:48px;
+  font-weight:300;
+}
+
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--red);color:var(--white);
+  font-size:14px;font-weight:500;letter-spacing:.04em;
+  padding:16px 36px;border:none;cursor:pointer;
+  text-decoration:none;display:inline-block;
+  transition:all .25s;position:relative;overflow:hidden;
+}
+.btn-primary::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,.1);
+  transform:translateX(-100%);transition:transform .3s;
+}
+.btn-primary:hover::after{transform:translateX(0)}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  font-size:14px;font-weight:400;letter-spacing:.04em;
+  padding:16px 28px;border:0.5px solid rgba(255,255,255,.25);
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:all .25s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.05)}
+
+.hero-right{
+  display:flex;flex-direction:column;gap:2px;
+  animation:fadeUp .9s .2s ease both;
+}
+
+/* Stats grid */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.stat-cell{
+  background:var(--black-2);
+  padding:32px 28px;
+  border:0.5px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.stat-cell::before{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;background:var(--red);
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .4s ease;
+}
+.stat-cell:hover::before{transform:scaleY(1)}
+.stat-num{
+  font-family:'Noto Serif JP',serif;
+  font-size:42px;font-weight:700;
+  color:var(--white);line-height:1;
+  margin-bottom:8px;
+}
+.stat-num .plus{color:var(--red)}
+.stat-label{font-size:12px;color:var(--gray);letter-spacing:.04em;line-height:1.5}
+.stat-ja{
+  position:absolute;bottom:12px;right:14px;
+  font-family:'Noto Serif JP',serif;
+  font-size:10px;color:var(--border);letter-spacing:.1em;
+}
+
+.hero-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 48px 24px 80px;
+  border-top:0.5px solid var(--border);
+}
+.hero-bottom-left{display:flex;align-items:center;gap:32px}
+.partner-tag{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:.12em;color:var(--gray);
+  text-transform:uppercase;display:flex;align-items:center;gap:8px;
+}
+.partner-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0}
+.scroll-hint{
+  display:flex;align-items:center;gap:10px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:.1em;color:var(--gray);
+}
+.scroll-dot{
+  width:20px;height:20px;border-radius:50%;
+  border:0.5px solid var(--gray);
+  display:flex;align-items:center;justify-content:center;
+  animation:scrollBounce 1.8s infinite;
+}
+.scroll-dot::after{content:'↓';font-size:10px;color:var(--gray)}
+
+/* ── STRIP — TICKER ─────────────────────────── */
+.ticker{
+  background:var(--red);
+  padding:12px 0;overflow:hidden;
+  display:flex;align-items:center;
+}
+.ticker-track{
+  display:flex;gap:64px;
+  animation:ticker 20s linear infinite;
+  white-space:nowrap;
+}
+.ticker-item{
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:.12em;color:var(--white);
+  text-transform:uppercase;display:flex;align-items:center;gap:12px;
+  flex-shrink:0;
+}
+.ticker-item::before{content:'◆';font-size:6px;color:rgba(255,255,255,.5)}
+
+/* ── SECTION BASE ───────────────────────────── */
+section{padding:100px 0}
+.container{max-width:1280px;margin:0 auto;padding:0 48px}
+.section-label{
+  display:flex;align-items:center;gap:16px;margin-bottom:56px;
+}
+.section-label-num{
+  font-family:'DM Mono',monospace;
+  font-size:11px;color:var(--red);letter-spacing:.15em;
+}
+.section-label-line{width:40px;height:0.5px;background:var(--red)}
+.section-label-text{
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:.12em;color:var(--gray);text-transform:uppercase;
+}
+.section-h2{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(34px,4vw,56px);font-weight:700;
+  line-height:1.1;letter-spacing:-.02em;
+  margin-bottom:20px;
+}
+
+/* ── JOURNEY — 5 STAGES ─────────────────────── */
+.journey{background:var(--off-white)}
+.journey-intro{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:end;margin-bottom:80px;
+}
+.journey-intro-p{font-size:16px;line-height:1.9;color:#555;font-weight:300;padding-top:16px}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.steps::before{
+  content:'';position:absolute;top:48px;left:48px;right:48px;
+  height:0.5px;background:linear-gradient(90deg,var(--red),var(--border-light));
+  z-index:0;
+}
+.step{
+  padding:0 24px 0 0;position:relative;z-index:1;
+  cursor:pointer;
+}
+.step-num-wrap{
+  width:96px;height:96px;margin-bottom:28px;
+  position:relative;display:flex;align-items:center;justify-content:center;
+}
+.step-circle{
+  width:96px;height:96px;border-radius:50%;
+  background:var(--off-white);
+  border:0.5px solid var(--border-light);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .35s;
+  position:relative;overflow:hidden;
+}
+.step:hover .step-circle, .step.active .step-circle{
+  background:var(--red);border-color:var(--red);
+}
+.step-num{
+  font-family:'Noto Serif JP',serif;
+  font-size:28px;font-weight:700;color:var(--black);
+  transition:color .3s;
+}
+.step:hover .step-num,.step.active .step-num{color:var(--white)}
+.step-ja{
+  position:absolute;bottom:4px;right:4px;
+  font-size:9px;color:var(--gray);font-family:'Noto Serif JP',serif;
+  letter-spacing:.05em;transition:color .3s;
+}
+.step:hover .step-ja,.step.active .step-ja{color:rgba(255,255,255,.6)}
+.step-title{
+  font-size:15px;font-weight:500;margin-bottom:8px;
+  color:var(--black);
+}
+.step-desc{font-size:12px;line-height:1.7;color:var(--gray)}
+.step-badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:14px}
+.step-badge{
+  font-size:10px;letter-spacing:.04em;
+  padding:3px 8px;border:0.5px solid var(--border-light);
+  color:var(--gray);background:var(--white);
+}
+
+/* ── SECTORS ────────────────────────────────── */
+.sectors{background:var(--black);color:var(--white)}
+.sectors .section-h2{color:var(--white)}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+.sector-card{
+  background:var(--black-2);
+  padding:44px 36px;
+  border:0.5px solid var(--border);
+  cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:all .3s;
+}
+.sector-card::after{
+  content:'';position:absolute;inset:0;
+  background:var(--red);
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .4s cubic-bezier(.77,0,.18,1);
+  z-index:0;
+}
+.sector-card:hover::after{transform:scaleY(1)}
+.sector-card-content{position:relative;z-index:1;transition:color .3s}
+.sector-icon{
+  font-family:'Noto Serif JP',serif;
+  font-size:36px;color:var(--red);margin-bottom:20px;
+  transition:color .3s;display:block;line-height:1;
+}
+.sector-card:hover .sector-icon{color:rgba(255,255,255,.9)}
+.sector-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:22px;font-weight:600;color:var(--white);
+  margin-bottom:8px;transition:color .3s;
+}
+.sector-uz{font-size:13px;color:var(--gray);margin-bottom:20px;transition:color .3s}
+.sector-card:hover .sector-uz{color:rgba(255,255,255,.7)}
+.sector-salary{
+  display:flex;align-items:baseline;gap:6px;margin-bottom:20px;
+}
+.salary-amount{
+  font-family:'Noto Serif JP',serif;
+  font-size:26px;font-weight:700;color:var(--white);
+  transition:color .3s;
+}
+.salary-unit{font-size:12px;color:var(--gray);transition:color .3s}
+.sector-card:hover .salary-unit{color:rgba(255,255,255,.6)}
+.sector-reqs{list-style:none;display:flex;flex-direction:column;gap:6px}
+.sector-reqs li{
+  font-size:12px;color:var(--gray);
+  display:flex;align-items:center;gap:8px;
+  transition:color .3s;
+}
+.sector-card:hover .sector-reqs li{color:rgba(255,255,255,.7)}
+.sector-reqs li::before{content:'→';color:var(--red);flex-shrink:0;transition:color .3s}
+.sector-card:hover .sector-reqs li::before{color:rgba(255,255,255,.8)}
+.sector-arrow{
+  position:absolute;bottom:36px;right:36px;
+  font-size:20px;color:var(--border);
+  transition:all .3s;z-index:1;
+}
+.sector-card:hover .sector-arrow{color:rgba(255,255,255,.8);transform:translate(4px,-4px)}
+
+/* ── TRUST ──────────────────────────────────── */
+.trust{background:var(--off-white)}
+.trust-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.trust-left .section-h2{margin-bottom:24px}
+.trust-body{font-size:15px;line-height:1.9;color:#555;font-weight:300;margin-bottom:40px}
+.trust-numbers{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.trust-num{border-top:2px solid var(--red);padding-top:20px}
+.trust-num-val{
+  font-family:'Noto Serif JP',serif;
+  font-size:38px;font-weight:700;color:var(--black);
+  line-height:1;margin-bottom:6px;
+}
+.trust-num-val .plus{color:var(--red)}
+.trust-num-label{font-size:12px;color:var(--gray);line-height:1.5}
+
+.trust-right{display:flex;flex-direction:column;gap:2px}
+.partner-row{
+  display:flex;align-items:center;gap:20px;
+  padding:22px 28px;
+  background:var(--white);
+  border:0.5px solid var(--border-light);
+  transition:border-color .2s;
+}
+.partner-row:hover{border-color:var(--red)}
+.partner-logo-box{
+  width:52px;height:52px;
+  background:var(--off-white);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-family:'Noto Serif JP',serif;
+  font-size:11px;font-weight:600;letter-spacing:.05em;
+  color:var(--red);text-align:center;line-height:1.3;
+}
+.partner-info{flex:1}
+.partner-name{font-size:14px;font-weight:500;color:var(--black);margin-bottom:2px}
+.partner-role{font-size:12px;color:var(--gray)}
+.partner-check{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.partner-check::after{content:'✓';color:var(--white);font-size:11px}
+
+/* ── PROCESS TIMELINE ───────────────────────── */
+.process{background:var(--white)}
+.process-head{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:end;margin-bottom:72px;
+}
+.process-list{display:flex;flex-direction:column;gap:0}
+.process-item{
+  display:grid;grid-template-columns:80px 1fr;gap:0;
+  border-bottom:0.5px solid var(--border-light);
+  cursor:pointer;
+  transition:background .2s;
+}
+.process-item:hover{background:var(--off-white)}
+.process-item-num{
+  padding:28px 0 28px 0;
+  font-family:'Noto Serif JP',serif;
+  font-size:13px;font-weight:600;color:var(--red);
+  display:flex;align-items:flex-start;padding-top:30px;
+}
+.process-item-body{
+  padding:28px 0 28px 28px;
+  border-left:0.5px solid var(--border-light);
+}
+.process-item-title{font-size:16px;font-weight:500;margin-bottom:6px}
+.process-item-desc{font-size:13px;color:var(--gray);line-height:1.7}
+.process-item-tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.ptag{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:.08em;color:var(--red);
+  border:0.5px solid rgba(201,17,26,.3);
+  padding:3px 10px;
+}
+
+/* ── TESTIMONIALS ───────────────────────────── */
+.testimonials{background:var(--black-2);color:var(--white)}
+.testimonials .section-h2{color:var(--white)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+.testi-card{
+  background:var(--black-3);
+  padding:36px 32px;
+  border:0.5px solid var(--border);
+}
+.testi-quote{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;line-height:1.9;
+  color:rgba(255,255,255,.8);font-weight:300;
+  margin-bottom:28px;
+  font-style:italic;
+}
+.testi-quote::before{
+  content:'"';display:block;
+  font-size:48px;color:var(--red);line-height:.8;
+  margin-bottom:16px;font-style:normal;
+}
+.testi-person{display:flex;align-items:center;gap:14px;border-top:0.5px solid var(--border);padding-top:24px}
+.testi-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;color:var(--white);
+  flex-shrink:0;
+}
+.testi-name{font-size:14px;font-weight:500;color:var(--white)}
+.testi-meta{font-size:11px;color:var(--gray);margin-top:2px}
+.testi-flag{font-size:16px}
+
+/* ── CTA SECTION ────────────────────────────── */
+.cta-section{
+  background:var(--red);
+  padding:100px 0;
+  position:relative;overflow:hidden;
+}
+.cta-sun{
+  position:absolute;right:-100px;top:50%;transform:translateY(-50%);
+  width:480px;height:480px;opacity:.08;
+}
+.cta-section .container{position:relative;z-index:1}
+.cta-inner{
+  display:grid;grid-template-columns:1fr auto;
+  gap:60px;align-items:center;
+}
+.cta-h2{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(36px,4vw,56px);
+  font-weight:700;color:var(--white);
+  line-height:1.15;letter-spacing:-.02em;
+}
+.cta-h2 .ja{
+  display:block;font-size:.4em;font-weight:300;
+  color:rgba(255,255,255,.6);letter-spacing:.15em;
+  margin-bottom:8px;
+}
+.cta-sub{margin-top:20px;font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;font-weight:300}
+.cta-buttons{display:flex;flex-direction:column;gap:12px;min-width:220px}
+.cta-btn{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 24px;
+  font-size:13px;font-weight:500;letter-spacing:.03em;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:all .25s;
+}
+.cta-btn-tg{background:var(--white);color:var(--red)}
+.cta-btn-tg:hover{background:var(--off-white)}
+.cta-btn-call{background:rgba(255,255,255,.15);color:var(--white);border:0.5px solid rgba(255,255,255,.3)}
+.cta-btn-call:hover{background:rgba(255,255,255,.25)}
+.cta-btn-icon{font-size:16px}
+
+/* ── OFFICES ─────────────────────────────────── */
+.offices{background:var(--off-white)}
+.offices-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:60px}
+.office-card{
+  background:var(--white);
+  padding:28px 24px;border:0.5px solid var(--border-light);
+  transition:all .25s;
+}
+.office-card:hover{border-color:var(--red);background:var(--off-white)}
+.office-city{
+  font-family:'Noto Serif JP',serif;
+  font-size:17px;font-weight:600;margin-bottom:6px;
+}
+.office-region{font-size:11px;color:var(--gray);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.office-phone{font-family:'DM Mono',monospace;font-size:12px;color:var(--black);text-decoration:none}
+.office-phone:hover{color:var(--red)}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer{
+  background:var(--black);color:var(--gray);
+  padding:60px 0 36px;
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px;padding-bottom:48px;
+  border-bottom:0.5px solid var(--border);
+  margin-bottom:36px;
+}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.footer-brand-text{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:.1em;color:var(--gray);line-height:1.5;
+  text-transform:uppercase;
+}
+.footer-desc{font-size:13px;line-height:1.8;max-width:280px}
+.footer-col h4{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  font-family:'DM Mono',monospace;color:var(--white);margin-bottom:20px;
+}
+.footer-col a{
+  display:block;font-size:13px;color:var(--gray);text-decoration:none;
+  margin-bottom:10px;transition:color .2s;
+}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em}
+.footer-ja{font-family:'Noto Serif JP',serif;font-size:10px;letter-spacing:.15em;color:var(--border)}
+
+/* ── STICKY MOBILE CTA ──────────────────────── */
+.mobile-cta{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:var(--red);padding:14px 24px;
+  align-items:center;justify-content:space-between;
+}
+.mobile-cta a{color:var(--white);text-decoration:none;font-size:13px;font-weight:500}
+.mobile-cta-icon{font-size:20px}
+
+/* ── ANIMATIONS ──────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(32px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes ticker{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@keyframes scrollBounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(4px)}
+}
+@keyframes sunRotate{
+  from{transform:translateY(-50%) rotate(0deg)}
+  to{transform:translateY(-50%) rotate(360deg)}
+}
+.hero-sun{animation:sunRotate 80s linear infinite}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;padding:60px 32px}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr 1fr;gap:24px}
+  .steps::before{display:none}
+  .sectors-grid{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .process-head{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .cta-inner{grid-template-columns:1fr}
+  .offices-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .journey-intro{grid-template-columns:1fr;gap:32px;margin-bottom:40px}
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .nav-cta{display:none}
+  .mobile-cta{display:flex}
+}
+@media(min-width:1025px){
+  .mobile-nav{display:none !important}
+  .nav-hamburger{display:none !important}
+}
+@media(max-width:640px){
+  body{padding-bottom:52px}
+  section{padding:64px 0}
+  .container{padding:0 20px}
+  nav{padding:0 20px}
+  .nav-right .lang-btn{display:none}
+  .mobile-lang-switcher{display:flex}
+  .nav-logo-mark img{margin-left:-22px}
+  .hero-inner{padding:40px 20px;gap:40px}
+  .hero-line{display:none}
+  .hero-h1{font-size:clamp(34px, 10vw, 42px)}
+  .hero-sub{margin-bottom:32px;font-size:15px}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
+  .btn-primary, .btn-ghost{text-align:center;padding:14px 20px}
+  .hero-bottom{padding:20px;flex-direction:column;align-items:flex-start;gap:20px}
+  .hero-bottom-left{flex-wrap:wrap;gap:16px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .stat-cell{padding:24px 16px}
+  .stat-num{font-size:30px}
+  .sectors-grid{grid-template-columns:1fr}
+  .offices-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:40px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">
+      <img src="logo.png" alt="Yapon tili va kasbiy malaka test markazi">
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="#journey">Jarayon</a>
+    <a href="#sectors">Yo'nalishlar</a>
+    <a href="#trust">Hamkorlar</a>
+    <a href="#offices">Filiallar</a>
+    <a href="#blog">Yangiliklar</a>
+  </div>
+
+  <div class="nav-right">
+    <button class="lang-btn active">UZ</button>
+    <button class="lang-btn">RU</button>
+    <button class="lang-btn">JP</button>
+    <a href="https://t.me/japan_manager1" class="nav-cta">Bog'lanish →</a>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Menyu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-lang-switcher">
+    <button class="lang-btn active">UZ</button>
+    <button class="lang-btn">RU</button>
+    <button class="lang-btn">JP</button>
+  </div>
+  <a href="#journey">Jarayon</a>
+  <a href="#sectors">Yo'nalishlar</a>
+  <a href="#trust">Hamkorlar</a>
+  <a href="#offices">Filiallar</a>
+  <a href="#blog">Yangiliklar</a>
+  <a href="https://t.me/japan_manager1" style="color:var(--red);font-weight:500">Bog'lanish →</a>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero">
+
+  <!-- Background rising sun -->
+  <div class="hero-sun">
+    <svg viewBox="0 0 680 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="340" cy="340" r="180" fill="white"/>
+      <line x1="340" y1="10" x2="340" y2="120" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="340" y1="560" x2="340" y2="670" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="10" y1="340" x2="120" y2="340" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="560" y1="340" x2="670" y2="340" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="90" y1="90" x2="170" y2="170" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="510" y1="510" x2="590" y2="590" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="590" y1="90" x2="510" y2="170" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="170" y1="510" x2="90" y2="590" stroke="white" stroke-width="12" stroke-linecap="round"/>
+      <line x1="205" y1="37" x2="230" y2="142" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="475" y1="538" x2="450" y2="643" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="37" y1="475" x2="142" y2="450" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="538" y1="205" x2="643" y2="230" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="643" y1="450" x2="538" y2="475" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="142" y1="230" x2="37" y2="205" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="hero-line"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>O'zbekiston → Yaponiya · 2018 yildan</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="ja">日本語と専門技術</span>
+        Yaponiyaga<br><em>qonuniy yo'l</em> —<br>bitta markaz.
+      </h1>
+      <p class="hero-sub">
+        N4 darajadan Tokutei Ginou vizasigacha — 8 oy ichida. Bandlik vazirligi, JICA va 60+ yapon kompaniyasi bilan hamkorlikda.
+      </p>
+      <div class="hero-actions">
+        <a href="#journey" class="btn-primary">Jarayonni ko'ring →</a>
+        <a href="https://t.me/japan_manager1" class="btn-ghost">Telegram orqali yozing</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="stat-num"><span class="counter" data-target="5000">0</span><span class="plus">+</span></div>
+          <div class="stat-label">Ishchi va talabalar<br>Yaponiyaga yuborilgan</div>
+          <div class="stat-ja">実績</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num"><span class="counter" data-target="12">0</span></div>
+          <div class="stat-label">Viloyatlardagi<br>filiallar soni</div>
+          <div class="stat-ja">支店</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num"><span class="counter" data-target="8">0</span><span class="plus"> oy</span></div>
+          <div class="stat-label">0 dan N4 va<br>ish vizasigacha</div>
+          <div class="stat-ja">期間</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">100<span class="plus">%</span></div>
+          <div class="stat-label">Qonuniy · Rasmiy ·<br>Kafolatlangan</div>
+          <div class="stat-ja">保証</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-bottom-left">
+      <div class="partner-tag">Bandlik vazirligi hamkori</div>
+      <div class="partner-tag">JICA tasdiqlangan</div>
+      <div class="partner-tag">JAC akkreditatsiyalangan</div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-dot"></div>
+      <span>Pastga suring</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ═════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">Tokutei Ginou №1 Viza</div>
+    <div class="ticker-item">JLPT N5 — N2</div>
+    <div class="ticker-item">Kaigo — Qariyalar parvarishi</div>
+    <div class="ticker-item">Qurilish sohasida ish</div>
+    <div class="ticker-item">Qishloq xo'jaligi</div>
+    <div class="ticker-item">JFT Basic A2</div>
+    <div class="ticker-item">Student Viza · Aprel · Oktyabr</div>
+    <div class="ticker-item">IT muhandis vakansiya</div>
+    <div class="ticker-item">Tokutei Ginou №1 Viza</div>
+    <div class="ticker-item">JLPT N5 — N2</div>
+    <div class="ticker-item">Kaigo — Qariyalar parvarishi</div>
+    <div class="ticker-item">Qurilish sohasida ish</div>
+    <div class="ticker-item">Qishloq xo'jaligi</div>
+    <div class="ticker-item">JFT Basic A2</div>
+    <div class="ticker-item">Student Viza · Aprel · Oktyabr</div>
+    <div class="ticker-item">IT muhandis vakansiya</div>
+  </div>
+</div>
+
+<!-- ══ JOURNEY ════════════════════════════════════ -->
+<section class="journey" id="journey">
+  <div class="container">
+    <div class="section-label">
+      <span class="section-label-num">01</span>
+      <div class="section-label-line"></div>
+      <span class="section-label-text">プロセス · Jarayon</span>
+    </div>
+    <div class="journey-intro">
+      <h2 class="section-h2 reveal">Noldan Yaponiyagacha — beshta qadam.</h2>
+      <p class="journey-intro-p reveal reveal-delay-1">Hech narsa bilmasangiz ham muammo yo'q. Biz til o'rgatishdan boshlab, Yaponiyada ish topib berib, huquqiy qo'llab-quvvatlashgacha — butun yo'lda yoningizda bo'lamiz.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal" data-step="1">
+        <div class="step-num-wrap">
+          <div class="step-circle">
+            <span class="step-num">01</span>
+            <span class="step-ja">語学</span>
+          </div>
+        </div>
+        <div class="step-title">Til o'rganish</div>
+        <div class="step-desc">Minnano Nihongo 1–2 dasturi asosida. Oflayn va online guruhlar. Malakali o'qituvchilar.</div>
+        <div class="step-badges">
+          <span class="step-badge">N5 / N4</span>
+          <span class="step-badge">Fast-track</span>
+          <span class="step-badge">6–8 oy</span>
+        </div>
+      </div>
+
+      <div class="step reveal reveal-delay-1" data-step="2">
+        <div class="step-num-wrap">
+          <div class="step-circle">
+            <span class="step-num">02</span>
+            <span class="step-ja">試験</span>
+          </div>
+        </div>
+        <div class="step-title">Imtihon</div>
+        <div class="step-desc">JLPT yoki JFT Basic — til sertifikati. Tokutei Ginou — kasbiy malaka testi.</div>
+        <div class="step-badges">
+          <span class="step-badge">JLPT</span>
+          <span class="step-badge">JFT Basic</span>
+          <span class="step-badge">Tokutei</span>
+        </div>
+      </div>
+
+      <div class="step reveal reveal-delay-2" data-step="3">
+        <div class="step-num-wrap">
+          <div class="step-circle">
+            <span class="step-num">03</span>
+            <span class="step-ja">就職</span>
+          </div>
+        </div>
+        <div class="step-title">Ish joylashish</div>
+        <div class="step-desc">JAC, JIC va 60+ yapon kompaniyasi bilan to'g'ridan-to'g'ri shartnoma. Kafolatlangan ish o'rinlari.</div>
+        <div class="step-badges">
+          <span class="step-badge">Qurilish</span>
+          <span class="step-badge">Kaigo</span>
+          <span class="step-badge">IT</span>
+        </div>
+      </div>
+
+      <div class="step reveal reveal-delay-3" data-step="4">
+        <div class="step-num-wrap">
+          <div class="step-circle">
+            <span class="step-num">04</span>
+            <span class="step-ja">査証</span>
+          </div>
+        </div>
+        <div class="step-title">Viza rasmiylashtirish</div>
+        <div class="step-desc">Tokutei Ginou №1 yoki Student viza. Hujjatlar tayyorlash va topshirish — bizda.</div>
+        <div class="step-badges">
+          <span class="step-badge">TG №1</span>
+          <span class="step-badge">Student</span>
+          <span class="step-badge">1–5 yil</span>
+        </div>
+      </div>
+
+      <div class="step reveal reveal-delay-3" data-step="5">
+        <div class="step-num-wrap">
+          <div class="step-circle">
+            <span class="step-num">05</span>
+            <span class="step-ja">支援</span>
+          </div>
+        </div>
+        <div class="step-title">Yaponiyada qo'llab-quvvatlash</div>
+        <div class="step-desc">Huquqiy maslahat, Telegram kanal va hamjamiyat — Yaponiyada ham yoningizda.</div>
+        <div class="step-badges">
+          <span class="step-badge">24/7 yordam</span>
+          <span class="step-badge">Jamiyat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTORS ════════════════════════════════════ -->
+<section class="sectors" id="sectors">
+  <div class="container">
+    <div class="section-label">
+      <span class="section-label-num" style="color:rgba(255,255,255,.3)">02</span>
+      <div class="section-label-line" style="background:rgba(255,255,255,.2)"></div>
+      <span class="section-label-text" style="color:rgba(255,255,255,.3)">職種 · Yo'nalishlar</span>
+    </div>
+    <h2 class="section-h2 reveal">O'z sohangizdagi<br>ish o'rnini tanlang.</h2>
+
+    <div class="sectors-grid">
+      <div class="sector-card reveal">
+        <div class="sector-card-content">
+          <span class="sector-icon">建</span>
+          <div class="sector-name">Qurilish</div>
+          <div class="sector-uz">特定技能建設 · Qurilish sohasida ish</div>
+          <div class="sector-salary">
+            <span class="salary-amount">180,000–250,000</span>
+            <span class="salary-unit">¥ / oy</span>
+          </div>
+          <ul class="sector-reqs">
+            <li>Erkak va ayol, 18–40 yosh</li>
+            <li>JFT Basic A2 + Qurilish testi</li>
+            <li>Tokutei Ginou №1 viza, 5 yilgacha</li>
+          </ul>
+        </div>
+        <span class="sector-arrow">↗</span>
+      </div>
+
+      <div class="sector-card reveal reveal-delay-1">
+        <div class="sector-card-content">
+          <span class="sector-icon">介</span>
+          <div class="sector-name">Kaigo</div>
+          <div class="sector-uz">介護 · Qariyalar parvarishi</div>
+          <div class="sector-salary">
+            <span class="salary-amount">180,000–270,000</span>
+            <span class="salary-unit">¥ / oy</span>
+          </div>
+          <ul class="sector-reqs">
+            <li>Ayol va erkak, 18–40 yosh</li>
+            <li>JFT Basic + Kaigo sertifikati</li>
+            <li>100% kafolatlangan ish joylashish</li>
+          </ul>
+        </div>
+        <span class="sector-arrow">↗</span>
+      </div>
+
+      <div class="sector-card reveal reveal-delay-2">
+        <div class="sector-card-content">
+          <span class="sector-icon">農</span>
+          <div class="sector-name">Qishloq xo'jaligi</div>
+          <div class="sector-uz">農業 · Agricultural work</div>
+          <div class="sector-salary">
+            <span class="salary-amount">160,000–200,000</span>
+            <span class="salary-unit">¥ / oy</span>
+          </div>
+          <ul class="sector-reqs">
+            <li>Erkak va ayol, 18–40 yosh</li>
+            <li>JFT Basic + Qishloq testi</li>
+            <li>Hokkaido, Niigata shaharlarida</li>
+          </ul>
+        </div>
+        <span class="sector-arrow">↗</span>
+      </div>
+
+      <div class="sector-card reveal">
+        <div class="sector-card-content">
+          <span class="sector-icon">宿</span>
+          <div class="sector-name">Mehmonxona</div>
+          <div class="sector-uz">宿泊 · Hotel &amp; Hospitality</div>
+          <div class="sector-salary">
+            <span class="salary-amount">180,000–270,000</span>
+            <span class="salary-unit">¥ / oy</span>
+          </div>
+          <ul class="sector-reqs">
+            <li>Erkak va ayol, 23–38 yosh</li>
+            <li>N3–N2 daraja + Bakalavr</li>
+            <li>Ingliz tili ustunlik beradi</li>
+          </ul>
+        </div>
+        <span class="sector-arrow">↗</span>
+      </div>
+
+      <div class="sector-card reveal reveal-delay-1">
+        <div class="sector-card-content">
+          <span class="sector-icon">技</span>
+          <div class="sector-name">IT muhandis</div>
+          <div class="sector-uz">IT · Dasturlash va injinirinq</div>
+          <div class="sector-salary">
+            <span class="salary-amount">4,000,000+</span>
+            <span class="salary-unit">¥ / yil</span>
+          </div>
+          <ul class="sector-reqs">
+            <li>Dasturlash tajribasi zarur</li>
+            <li>N3 daraja yoki ingliz tili</li>
+            <li>Bonus: 5.9 oylik maosh</li>
+          </ul>
+        </div>
+        <span class="sector-arrow">↗</span>
+      </div>
+
+      <div class="sector-card reveal reveal-delay-2" style="display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer">
+        <div class="sector-card-content" style="text-align:center">
+          <div style="font-size:32px;margin-bottom:16px;color:rgba(255,255,255,.2)">+</div>
+          <div class="sector-name" style="font-size:16px;color:rgba(255,255,255,.6)">Boshqa yo'nalishlar</div>
+          <div class="sector-uz">Biz bilan bog'laning</div>
+          <div style="margin-top:24px">
+            <a href="https://t.me/japan_manager1" style="color:var(--red);font-size:13px;text-decoration:none;font-family:'DM Mono',monospace;letter-spacing:.06em">@japan_manager1 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST ══════════════════════════════════════ -->
+<section class="trust" id="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-left">
+        <div class="section-label">
+          <span class="section-label-num">03</span>
+          <div class="section-label-line"></div>
+          <span class="section-label-text">信頼 · Ishonch</span>
+        </div>
+        <h2 class="section-h2 reveal">Hukumat, JICA va<br>yapon kompaniyalari<br>bizni tasdiqlagan.</h2>
+        <p class="trust-body reveal">Bu oddiy xususiy agentlik emas. Biz O'zbekiston Bandlik vazirligi "Ishga marhamat" Monomarkaz tarmog'i ichida ishlaymiz — bu qonuniy kafolat.</p>
+        <div class="trust-numbers">
+          <div class="trust-num reveal">
+            <div class="trust-num-val"><span class="counter" data-target="53">0</span><span class="plus">+</span></div>
+            <div class="trust-num-label">Yaponiyada hozir ishlab turgan yurtdoshlar</div>
+          </div>
+          <div class="trust-num reveal reveal-delay-1">
+            <div class="trust-num-val"><span class="counter" data-target="7">0</span></div>
+            <div class="trust-num-label">Yil tajriba (2018 yildan)</div>
+          </div>
+          <div class="trust-num reveal reveal-delay-2">
+            <div class="trust-num-val"><span class="counter" data-target="60">0</span><span class="plus">+</span></div>
+            <div class="trust-num-label">Yapon kompaniya hamkorlari</div>
+          </div>
+          <div class="trust-num reveal reveal-delay-3">
+            <div class="trust-num-val"><span class="counter" data-target="300">0</span><span class="plus">+</span></div>
+            <div class="trust-num-label">Qarshi seminaridagi ishtirokchilar</div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-right reveal">
+        <div class="partner-row">
+          <div class="partner-logo-box">BV</div>
+          <div class="partner-info">
+            <div class="partner-name">Bandlik va mehnat munosabatlari vazirligi</div>
+            <div class="partner-role">Rasmiy Monomarkaz operatori</div>
+          </div>
+          <div class="partner-check"></div>
+        </div>
+        <div class="partner-row">
+          <div class="partner-logo-box">JICA</div>
+          <div class="partner-info">
+            <div class="partner-name">JICA — Japan International Cooperation Agency</div>
+            <div class="partner-role">O'quv sifatini oshirish hamkori</div>
+          </div>
+          <div class="partner-check"></div>
+        </div>
+        <div class="partner-row">
+          <div class="partner-logo-box">JAC</div>
+          <div class="partner-info">
+            <div class="partner-name">JAC — Japan Construction Skills Association</div>
+            <div class="partner-role">Qurilish sohasi akkreditatsiyasi</div>
+          </div>
+          <div class="partner-check"></div>
+        </div>
+        <div class="partner-row">
+          <div class="partner-logo-box">UzDJTU</div>
+          <div class="partner-info">
+            <div class="partner-name">O'zbekiston Davlat Jahon Tillari Universiteti</div>
+            <div class="partner-role">Ta'lim hamkori, filial tashkil etilgan</div>
+          </div>
+          <div class="partner-check"></div>
+        </div>
+        <div class="partner-row">
+          <div class="partner-logo-box">NA</div>
+          <div class="partner-info">
+            <div class="partner-name">Nippon Academy Group</div>
+            <div class="partner-role">Yapon ta'lim muassasasi hamkori</div>
+          </div>
+          <div class="partner-check"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════ -->
+<section class="process">
+  <div class="container">
+    <div class="process-head">
+      <div>
+        <div class="section-label">
+          <span class="section-label-num">04</span>
+          <div class="section-label-line"></div>
+          <span class="section-label-text">手順 · Hujjatlar</span>
+        </div>
+        <h2 class="section-h2 reveal">Nima kerak<br>va qanday boshlash?</h2>
+      </div>
+      <p class="reveal" style="font-size:15px;line-height:1.9;color:#555;font-weight:300;padding-top:24px">Hamma narsani siz uchun qilamiz. Faqat quyidagi asosiy shartlarga e'tibor bering va biz bilan bog'laning.</p>
+    </div>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-item-num">①</div>
+        <div class="process-item-body">
+          <div class="process-item-title">Yosh talabi</div>
+          <div class="process-item-desc">Aksariyat yo'nalishlar uchun 18–40 yosh. Mehmonxona va IT uchun 23–38 yosh. Ba'zi yo'nalishlar bo'yicha 45 yoshgacha.</div>
+          <div class="process-item-tags"><span class="ptag">18–40 yosh</span><span class="ptag">Ba'zida 45 gacha</span></div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-item-num">②</div>
+        <div class="process-item-body">
+          <div class="process-item-title">Ta'lim darajasi</div>
+          <div class="process-item-desc">Qurilish, kaigo, qishloq xo'jaligi uchun o'rta ta'lim yetarli. Mehmonxona va IT uchun bakalavr diplomi talab qilinadi.</div>
+          <div class="process-item-tags"><span class="ptag">O'rta ta'lim</span><span class="ptag">Bakalavr (IT/Hotel)</span></div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-item-num">③</div>
+        <div class="process-item-body">
+          <div class="process-item-title">Til sertifikati</div>
+          <div class="process-item-desc">JFT Basic A2 yoki JLPT N4 — ishchi vizalar uchun asosiy til talabi. N3–N2 mehmonxona va yuqori lavozimlari uchun. Yapon tili bilmasangiz, biz o'rgatamiz.</div>
+          <div class="process-item-tags"><span class="ptag">JFT Basic</span><span class="ptag">JLPT N4</span><span class="ptag">N3–N2</span></div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-item-num">④</div>
+        <div class="process-item-body">
+          <div class="process-item-title">Tokutei Ginou sertifikati</div>
+          <div class="process-item-desc">Har bir soha uchun alohida malaka testi. Biz test tayyorlov kurslari, rasmiy darsliklar va ro'yxatdan o'tishda yordam beramiz.</div>
+          <div class="process-item-tags"><span class="ptag">Qurilish testi</span><span class="ptag">Kaigo testi</span><span class="ptag">Qishloq testi</span></div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-item-num">⑤</div>
+        <div class="process-item-body">
+          <div class="process-item-title">Bepul konsultatsiya</div>
+          <div class="process-item-desc">Hamma narsani aniqlab, qaysi yo'nalish sizga to'g'ri kelishini bilib olish uchun — bepul maslahat. Telegram yoki telefon orqali, 1 daqiqada javob beramiz.</div>
+          <div class="process-item-tags"><span class="ptag">Bepul</span><span class="ptag">Telegram</span><span class="ptag">Telefon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═══════════════════════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">
+      <span class="section-label-num" style="color:rgba(255,255,255,.25)">05</span>
+      <div class="section-label-line" style="background:rgba(255,255,255,.15)"></div>
+      <span class="section-label-text" style="color:rgba(255,255,255,.3)">声 · Talabalar fikri</span>
+    </div>
+    <h2 class="section-h2 reveal">Ular ham siz kabi<br>orzu qilib yurgan.</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">Markazdan oldin yapon tili haqida hech narsa bilmasam, endi Nagoya qurilish kompaniyasida ishlayapman. N4 darajasini 6 oyda oldim. 210,000 yen — bu mening hayotimni o'zgartirdi.</div>
+        <div class="testi-person">
+          <div class="testi-avatar">SH</div>
+          <div>
+            <div class="testi-name">Shaxzodjon A. <span class="testi-flag">🇯🇵</span></div>
+            <div class="testi-meta">Jizzax · Qurilish · 2022 yildan</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-quote">Onam avvaliga qo'rqdi — qonuniymi, xavfsizmi, deb. Lekin Bandlik vazirligi orqali rasmiy yo'l ekanligi, JICA hamkorligi — bularni ko'rib ko'ndi. Endi Osaka reabilitatsiya markazida ishlayapman.</div>
+        <div class="testi-person">
+          <div class="testi-avatar">ZN</div>
+          <div>
+            <div class="testi-name">Zulfiya N. <span class="testi-flag">🇯🇵</span></div>
+            <div class="testi-meta">Toshkent · Kaigo · 2023 yildan</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-quote">Student vizasi bilan ketib, yonma-yon ishlab ham pul ham ta'lim oldim. Bir paytlar xuddi siz kabi qarasam, 2025 yildan endi N2 darajam bor. Keyin Tokutei Ginou №2 olishni rejalashtiraman.</div>
+        <div class="testi-person">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Abdulloh K. <span class="testi-flag">🇯🇵</span></div>
+            <div class="testi-meta">Samarqand · Student viza → TG №2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-sun">
+    <svg viewBox="0 0 480 480" fill="none">
+      <circle cx="240" cy="240" r="130" fill="white"/>
+      <line x1="240" y1="10" x2="240" y2="85" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="240" y1="395" x2="240" y2="470" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="10" y1="240" x2="85" y2="240" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="395" y1="240" x2="470" y2="240" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="65" y1="65" x2="118" y2="118" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="362" y1="362" x2="415" y2="415" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="415" y1="65" x2="362" y2="118" stroke="white" stroke-width="10" stroke-linecap="round"/>
+      <line x1="118" y1="362" x2="65" y2="415" stroke="white" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2 class="cta-h2">
+          <span class="ja">無料相談</span>
+          Bugunoq bepul<br>konsultatsiya oling.
+        </h2>
+        <p class="cta-sub">Qaysi yo'nalish to'g'ri kelishini bilmasangiz ham muammo yo'q — biz bilan gaplashing, aniqlab beramiz. 1 daqiqada javob.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="https://t.me/japan_manager1" class="cta-btn cta-btn-tg">
+          <span>Telegram orqali yozing</span>
+          <span class="cta-btn-icon">→</span>
+        </a>
+        <a href="tel:+998955120808" class="cta-btn cta-btn-call">
+          <span>+998 95 512 08 08</span>
+          <span class="cta-btn-icon">↗</span>
+        </a>
+        <a href="tel:+998338789892" class="cta-btn cta-btn-call">
+          <span>+998 33 878 98 92</span>
+          <span class="cta-btn-icon">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OFFICES ════════════════════════════════════ -->
+<section class="offices" id="offices">
+  <div class="container">
+    <div class="section-label">
+      <span class="section-label-num">06</span>
+      <div class="section-label-line"></div>
+      <span class="section-label-text">支店 · Filiallar</span>
+    </div>
+    <h2 class="section-h2 reveal" style="margin-bottom:16px">12 viloyat —<br>bitta yo'nalish.</h2>
+    <p class="reveal" style="font-size:15px;color:#666;margin-bottom:0;font-weight:300">Siz qayerda bo'lsangiz ham, yaqin filialimizdagi mutaxassisimiz tayyor.</p>
+    <div class="offices-grid" style="margin-top:48px">
+      <div class="office-card reveal">
+        <div class="office-city">Toshkent</div>
+        <div class="office-region">Bosh ofis</div>
+        <a href="tel:+998955120808" class="office-phone">+998 95 512 08 08</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Samarqand</div>
+        <div class="office-region">Samarqand viloyati</div>
+        <a href="tel:+998995989915" class="office-phone">+998 99 598 99 15</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Jizzax</div>
+        <div class="office-region">Jizzax viloyati</div>
+        <a href="tel:+998995537575" class="office-phone">+998 99 553 75 75</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Qarshi</div>
+        <div class="office-region">Qashqadaryo viloyati</div>
+        <a href="tel:+998942960995" class="office-phone">+998 94 296 09 95</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Farg'ona</div>
+        <div class="office-region">Farg'ona viloyati</div>
+        <a href="tel:+998979550722" class="office-phone">+998 97 955 07 22</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Andijon</div>
+        <div class="office-region">Andijon viloyati</div>
+        <a href="tel:+998934198737" class="office-phone">+998 93 419 87 37</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Namangan</div>
+        <div class="office-region">Namangan viloyati</div>
+        <a href="tel:+998990076721" class="office-phone">+998 99 007 67 21</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Buxoro</div>
+        <div class="office-region">Buxoro viloyati</div>
+        <a href="tel:+998993875767" class="office-phone">+998 99 387 57 67</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Navoiy</div>
+        <div class="office-region">Navoiy viloyati</div>
+        <a href="tel:+998990412421" class="office-phone">+998 99 041 24 21</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Xorazm</div>
+        <div class="office-region">Xorazm viloyati</div>
+        <a href="tel:+998937484098" class="office-phone">+998 93 748 40 98</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Oqqo'rg'on</div>
+        <div class="office-region">Toshkent viloyati</div>
+        <a href="tel:+998903491321" class="office-phone">+998 90 349 13 21</a>
+      </div>
+      <div class="office-card reveal">
+        <div class="office-city">Yangiyo'l</div>
+        <div class="office-region">Toshkent viloyati</div>
+        <a href="tel:+998900640730" class="office-phone">+998 90 064 07 30</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="logo.png" alt="Logo" style="height:80px;width:auto;object-fit:contain;filter:brightness(10);margin:-10px -10px -10px -16px">
+        </div>
+        <p class="footer-desc">O'zbekistondan Yaponiyaga — til o'rgatishdan ish joylashishgacha to'liq xizmat. 2018 yildan buyon.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Xizmatlar</h4>
+        <a href="#">Til kurslari</a>
+        <a href="#">JLPT tayyorlovi</a>
+        <a href="#">Tokutei Ginou</a>
+        <a href="#">Viza rasmiylashtirish</a>
+        <a href="#">Ish joylashish</a>
+      </div>
+      <div class="footer-col">
+        <h4>Yo'nalishlar</h4>
+        <a href="#">Qurilish</a>
+        <a href="#">Kaigo</a>
+        <a href="#">Qishloq xo'jaligi</a>
+        <a href="#">Mehmonxona</a>
+        <a href="#">IT muhandis</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ijtimoiy tarmoqlar</h4>
+        <a href="https://t.me/japanskillcenter">Telegram</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Facebook</a>
+        <a href="mailto:info@jsc.uz">info@jsc.uz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Yapon tili va kasbiy malaka test markazi</span>
+      <span class="footer-ja">日本語職業能力試験センター</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+  <a href="tel:+998955120808">Qo'ng'iroq qilish →</a>
+  <a href="https://t.me/japan_manager1">Telegram →</a>
+</div>
+
+<script>
+// ── Intersection Observer for scroll reveals
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// ── Counter animation
+function animateCounter(el){
+  const target=parseInt(el.dataset.target);
+  const duration=1800;const start=Date.now();
+  const step=()=>{
+    const elapsed=Date.now()-start;
+    const progress=Math.min(elapsed/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    el.textContent=Math.round(ease*target).toLocaleString();
+    if(progress<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){animateCounter(e.target);counterObs.unobserve(e.target)}
+  });
+},{threshold:.3});
+document.querySelectorAll('.counter').forEach(el=>counterObs.observe(el));
+
+// ── Nav scroll effect
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  if(window.scrollY>60){nav.style.background='rgba(245,243,238,0.97)';nav.style.boxShadow='0 1px 0 rgba(0,0,0,.08)'}
+  else{nav.style.background='rgba(245,243,238,0.92)';nav.style.boxShadow='none'}
+});
+
+// ── Language translation and switching handled by lang.js
+
+// ── Step hover
+document.querySelectorAll('.step').forEach(step=>{
+  step.addEventListener('mouseenter',()=>{
+    document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+    step.classList.add('active');
+  });
+});
+
+// ── Hamburger menu toggle
+const hamburger=document.getElementById('hamburgerBtn');
+const mobileNav=document.getElementById('mobileNav');
+if(hamburger&&mobileNav){
+  hamburger.addEventListener('click',()=>{
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('show');
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('show');
+    });
+  });
+}
+</script>
+<script src="lang.js"></script>
+</body>
+</html>
