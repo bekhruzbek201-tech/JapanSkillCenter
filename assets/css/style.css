@@ -375,30 +375,96 @@ section{padding:56px 0;scroll-margin-top:70px}
 .quote-card figcaption span{font-size:12.5px;color:var(--g6);font-weight:500}
 @media(max-width:560px){.quote-card{padding:36px 26px 26px}.quote-card blockquote,.quote-card figcaption{padding-left:0}.quote-mark{position:static;display:block;margin-bottom:8px}}
 
-/* ─── MODAL ─── */
-.modal{position:fixed;inset:0;background:rgba(10,10,10,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .3s}
+/* ─── MODAL — Lead Form Beast Mode ─── */
+.modal{position:fixed;inset:0;background:rgba(10,10,10,.72);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .35s ease}
 .modal.show{display:flex;opacity:1}
-.modal-box{background:var(--wh);border-radius:18px;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;padding:32px 30px;position:relative;transform:translateY(20px) scale(.97);transition:transform .35s cubic-bezier(.34,1.56,.64,1);box-shadow:0 30px 80px rgba(0,0,0,.4)}
-.modal.show .modal-box{transform:translateY(0) scale(1)}
-.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:none;background:var(--g1);border-radius:50%;font-size:18px;cursor:pointer;color:var(--g8);display:flex;align-items:center;justify-content:center;transition:.2s}
-.modal-close:hover{background:var(--red);color:#fff;transform:rotate(90deg)}
-.modal-box h2{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;color:var(--bk);margin-bottom:6px;line-height:1.3;padding-right:30px}
-.modal-box .sub-line{font-size:13.5px;color:var(--g6);line-height:1.6;margin-bottom:22px}
-.form-row{margin-bottom:14px}
-.form-row label{display:block;font-size:12px;font-weight:700;color:var(--g8);margin-bottom:6px;letter-spacing:.02em}
-.form-row label sup{color:var(--red)}
-.form-row input,.form-row select,.form-row textarea{width:100%;padding:12px 14px;border:1.5px solid var(--g2);border-radius:9px;font-size:14px;font-family:inherit;color:var(--bk);background:var(--wh);transition:border-color .2s,box-shadow .2s;outline:none}
-.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(201,17,26,.1)}
-.form-row textarea{resize:vertical;min-height:70px;font-family:inherit}
-.form-row .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.btn-submit{width:100%;background:var(--red);color:#fff;border:none;padding:14px;border-radius:10px;font-size:14.5px;font-weight:800;cursor:pointer;transition:all .2s;margin-top:6px;letter-spacing:.02em}
-.btn-submit:hover:not(:disabled){background:#9A0D13;transform:translateY(-1px);box-shadow:0 8px 20px rgba(201,17,26,.25)}
-.btn-submit:disabled{opacity:.6;cursor:not-allowed}
-.apply-status{margin-top:12px;font-size:13px;text-align:center;line-height:1.5;min-height:18px}
-.modal-foot{margin-top:14px;font-size:11.5px;color:var(--g4);text-align:center;line-height:1.5;border-top:1px solid var(--g2);padding-top:12px}
+
+/* Modal shell — refined card with brand stripe + premium shadow */
+.modal-box{position:relative;background:var(--wh);border-radius:20px;width:100%;max-width:460px;max-height:92vh;overflow-y:auto;overflow-x:hidden;padding:30px 30px 26px;transform:translateY(28px) scale(.96);opacity:0;transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .35s ease;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 32px 80px -12px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.04);scrollbar-width:thin;scrollbar-color:var(--g2) transparent}
+.modal-box::-webkit-scrollbar{width:6px}
+.modal-box::-webkit-scrollbar-thumb{background:var(--g2);border-radius:3px}
+.modal-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red) 0%,#ff4452 50%,var(--red) 100%);border-radius:20px 20px 0 0;background-size:200% 100%;animation:_shimmerBar 4s ease-in-out infinite}
+@keyframes _shimmerBar{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.modal.show .modal-box{transform:translateY(0) scale(1);opacity:1}
+
+/* Drag handle (mobile bottom-sheet) */
+.modal-handle{display:none;position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;background:var(--g3);border-radius:99px;pointer-events:none}
+
+/* Close button — clean, rotates on hover */
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:none;background:var(--g1);border-radius:50%;cursor:pointer;color:var(--g7);display:flex;align-items:center;justify-content:center;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:2}
+.modal-close:hover{background:var(--red);color:#fff;transform:rotate(90deg) scale(1.05);box-shadow:0 4px 14px rgba(201,17,26,.35)}
+.modal-close:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* Modal head — title with kanji watermark */
+.modal-head{position:relative;margin-bottom:22px;padding-right:30px}
+.modal-kanji{position:absolute;top:-8px;right:0;font-family:'Noto Serif JP',serif;font-size:46px;font-weight:700;color:var(--red);opacity:.08;letter-spacing:-.04em;line-height:1;pointer-events:none;user-select:none}
+.modal-box h2{font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;color:var(--bk);margin:0 0 6px;line-height:1.25;letter-spacing:-.01em;position:relative}
+.modal-box h2::before{content:'';display:inline-block;width:24px;height:2.5px;background:var(--red);border-radius:2px;vertical-align:middle;margin-right:10px;margin-top:-3px}
+.modal-box .sub-line{font-size:13.5px;color:var(--g6);line-height:1.55;margin:0;font-weight:500}
+
+/* Field — icon-prefixed input system */
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11px;font-weight:800;color:var(--g7);margin-bottom:6px;letter-spacing:.1em;text-transform:uppercase}
+.field label sup{color:var(--red);font-size:13px;margin-left:2px}
+.field-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.field-row2 .field{margin-bottom:0}
+
+.field-wrap{position:relative;display:flex;align-items:center}
+.field-ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--g5);pointer-events:none;transition:color .25s ease,transform .25s ease;flex-shrink:0;z-index:1}
+.field-wrap.field-textarea .field-ic{top:14px;transform:none}
+.field-chev{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--g6);pointer-events:none;transition:transform .25s ease}
+
+.field-wrap input,.field-wrap select,.field-wrap textarea{width:100%;height:48px;padding:0 14px 0 42px;border:1.5px solid var(--g2);border-radius:11px;font-size:14.5px;font-family:inherit;font-weight:500;color:var(--bk);background:var(--wh);transition:all .25s cubic-bezier(.16,1,.3,1);outline:none;-webkit-appearance:none;appearance:none}
+.field-wrap textarea{height:auto;min-height:84px;padding:14px 14px 12px 42px;resize:vertical;line-height:1.5}
+.field-wrap.field-select select{padding-right:38px;cursor:pointer}
+.field-wrap input::placeholder,.field-wrap textarea::placeholder{color:var(--g4);font-weight:400}
+
+/* Focus state — brand red with soft glow */
+.field-wrap input:hover,.field-wrap select:hover,.field-wrap textarea:hover{border-color:var(--g4)}
+.field-wrap input:focus,.field-wrap select:focus,.field-wrap textarea:focus{border-color:var(--red);background:#fff;box-shadow:0 0 0 4px rgba(201,17,26,.08),0 4px 14px -4px rgba(201,17,26,.18)}
+.field-wrap:focus-within .field-ic{color:var(--red);transform:translateY(-50%) scale(1.08)}
+.field-wrap.field-textarea:focus-within .field-ic{transform:scale(1.08);top:14px}
+.field-wrap.field-select:focus-within .field-chev{transform:translateY(-50%) rotate(180deg);color:var(--red)}
+
+/* Filled state — subtle visual reinforcement (uses :has() — supported in all current browsers) */
+.field-wrap:has(input:not(:placeholder-shown)){--filled:1}
+.field-wrap:has(input:not(:placeholder-shown)) input{border-color:rgba(201,17,26,.22)}
+.field-wrap:has(input:not(:placeholder-shown)) .field-ic{color:var(--red)}
+.field-wrap:has(textarea:not(:placeholder-shown)) textarea{border-color:rgba(201,17,26,.22)}
+.field-wrap:has(textarea:not(:placeholder-shown)) .field-ic{color:var(--red)}
+
+/* Trust strip — chips above submit */
+.trust-strip{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:0;margin:18px 0 14px;border-top:1px dashed var(--g2);padding-top:14px}
+.trust-strip li{display:inline-flex;align-items:center;gap:5px;background:var(--g1);padding:5px 10px 5px 8px;border-radius:99px;font-size:11px;font-weight:700;color:var(--g7);letter-spacing:.02em;border:1px solid transparent;transition:all .25s ease}
+.trust-strip li:hover{background:var(--red-bg);color:var(--red);border-color:rgba(201,17,26,.2);transform:translateY(-1px)}
+.trust-strip svg{color:var(--red);flex-shrink:0}
+
+/* Submit button — animated arrow + spin loader */
+.btn-submit{position:relative;width:100%;background:linear-gradient(135deg,var(--red) 0%,#a8101a 100%);color:#fff;border:none;height:54px;border-radius:13px;font-size:15px;font-weight:800;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:8px;overflow:hidden;box-shadow:0 8px 22px -6px rgba(201,17,26,.4),0 1px 0 rgba(255,255,255,.2) inset}
+.btn-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.18) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.btn-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(201,17,26,.55),0 1px 0 rgba(255,255,255,.25) inset}
+.btn-submit:hover:not(:disabled)::before{transform:translateX(100%)}
+.btn-submit:hover:not(:disabled) .btn-submit-arrow{transform:translateX(4px)}
+.btn-submit:active:not(:disabled){transform:translateY(0);transition-duration:.1s}
+.btn-submit-text{position:relative;z-index:1}
+.btn-submit-arrow{position:relative;z-index:1;display:inline-flex;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.btn-submit-spin{display:none;position:absolute;width:20px;height:20px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:_spinBtn .7s linear infinite}
+@keyframes _spinBtn{to{transform:rotate(360deg)}}
+.btn-submit:disabled{cursor:wait;background:linear-gradient(135deg,#999,#777);box-shadow:none}
+.btn-submit:disabled .btn-submit-text,.btn-submit:disabled .btn-submit-arrow{opacity:0}
+.btn-submit:disabled .btn-submit-spin{display:block}
+
+/* Status — animated check / error */
+.apply-status{margin-top:14px;font-size:13.5px;text-align:center;line-height:1.55;min-height:20px;font-weight:600;animation:_statusIn .35s cubic-bezier(.16,1,.3,1)}
+.apply-status:empty{margin-top:0;min-height:0;animation:none}
+@keyframes _statusIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* Modal foot — privacy line */
+.modal-foot{margin-top:14px;font-size:11.5px;color:var(--g5);text-align:center;line-height:1.5;border-top:1px solid var(--g2);padding-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
+.modal-foot svg{color:#1a7f37;flex-shrink:0}
 
 @media(max-width:960px){.apply-grid{grid-template-columns:1fr 1fr}.partner-cols{grid-template-columns:1fr;gap:24px}}
-@media(max-width:600px){.apply-grid{grid-template-columns:1fr}.partner-grid{grid-template-columns:1fr}.modal-box{padding:24px 22px}.form-row .row2{grid-template-columns:1fr}}
+@media(max-width:600px){.apply-grid{grid-template-columns:1fr}.partner-grid{grid-template-columns:1fr}.field-row2{grid-template-columns:1fr;gap:0}.field-row2 .field{margin-bottom:14px}.field-row2 .field:last-child{margin-bottom:0}}
 
 /* ─── CTA & CONTACTS ─── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:40px}
@@ -664,7 +730,22 @@ footer{background:var(--dk);color:rgba(255,255,255,.45);padding:44px 0 28px}
   .float-cta span{display:none}
   /* Modal bottom-sheet */
   .modal{padding:0;align-items:flex-end}
-  .modal-box{max-width:100%;border-radius:18px 18px 0 0;max-height:88vh;padding:26px 22px 32px}
+  .modal-box{max-width:100%;border-radius:22px 22px 0 0;max-height:92vh;padding:26px 20px calc(24px + env(safe-area-inset-bottom));transform:translateY(100%) scale(1)}
+  .modal.show .modal-box{transform:translateY(0) scale(1)}
+  .modal-handle{display:block}
+  .modal-close{top:18px;right:14px;width:32px;height:32px;background:var(--g1)}
+  .modal-head{padding-top:8px;padding-right:36px;margin-bottom:18px}
+  .modal-kanji{font-size:38px;top:-2px}
+  .modal-box h2{font-size:19px}
+  .modal-box .sub-line{font-size:13px}
+  .field{margin-bottom:12px}
+  .field label{font-size:10.5px;margin-bottom:5px}
+  .field-wrap input,.field-wrap select,.field-wrap textarea{height:50px;font-size:15px;font-size:max(15px,1rem)}
+  .field-wrap textarea{height:auto;min-height:78px}
+  .btn-submit{height:54px;font-size:15px;border-radius:14px;position:sticky;bottom:0;margin-top:6px}
+  .trust-strip{margin:14px 0 12px;padding-top:12px}
+  .trust-strip li{font-size:10.5px;padding:5px 9px 5px 7px}
+  .modal-foot{font-size:11px;margin-top:12px;padding-top:10px}
   /* Recognition cards on tiny */
   .rec-card{padding:22px 18px 18px}
   .rec-card h3{font-size:15px}
@@ -758,9 +839,12 @@ img[loading=lazy]{content-visibility:auto}/* perf: skip rendering offscreen imag
   .rec-card h3{font-size:14.5px;line-height:1.3}
   /* Quote card on tiny screens */
   .quote-card blockquote{font-size:15.5px}
-  /* Modal — fixed-bottom mobile sheet padding */
-  .modal-box{padding:24px 20px 28px}
-  .form-row label{font-size:11.5px}
+  /* Modal — ultra-narrow phone polish */
+  .modal-box{padding:22px 18px calc(20px + env(safe-area-inset-bottom))}
+  .modal-kanji{font-size:32px}
+  .modal-box h2{font-size:18px}
+  .field-wrap input,.field-wrap select,.field-wrap textarea{padding-left:38px;font-size:14.5px}
+  .field-ic{left:11px;width:16px;height:16px}
   /* Footer single-col polish */
   .ft-grid{gap:24px}
   .ft-bottom{font-size:11px}

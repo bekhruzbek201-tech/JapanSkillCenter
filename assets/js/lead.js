@@ -158,25 +158,35 @@ async function handleApplySubmit(e) {
   }
 
   btn.disabled = true;
-  const orig = btn.textContent;
-  btn.textContent = '⏳ Yuborilmoqda...';
-  status.textContent = '';
+  status.innerHTML = '';
 
   const result = await submitLead(data);
 
   if (result.ok) {
     status.style.color = '#1a7f37';
-    status.innerHTML = `✅ Arizangiz qabul qilindi! Tez orada bog'lanamiz.<br><small style="color:#666">(${result.delivered}/${result.total} kanalga yetkazildi)</small>`;
+    status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Arizangiz qabul qilindi — tez orada bog'lanamiz.<br><small style="color:#888;font-weight:500;font-size:11.5px">(${result.delivered}/${result.total} kanalga yetkazildi)</small>`;
     form.reset();
     // Track conversion (Google Analytics if present)
     if (typeof gtag === 'function') gtag('event', 'lead_submit', { intent });
     setTimeout(closeApply, 2800);
   } else {
     status.style.color = '#C9111A';
-    status.textContent = "⚠️ Xatolik yuz berdi. Iltimos, +998 97 275 60 50 raqamiga qo'ng'iroq qiling yoki @yaponmalaka ga yozing.";
+    status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Xatolik. Iltimos, <a href="tel:+998972756050" style="color:#C9111A;text-decoration:underline">qo'ng'iroq qiling</a> yoki <a href="https://t.me/yaponmalaka" target="_blank" rel="noopener" style="color:#C9111A;text-decoration:underline">@yaponmalaka</a> ga yozing.`;
     btn.disabled = false;
-    btn.textContent = orig;
   }
+}
+
+/* -------------------- Live phone formatter (UZ +998) -------------------- */
+function formatUzPhone(value) {
+  let d = value.replace(/\D/g, '');
+  if (d.startsWith('998')) d = d.slice(3);
+  d = d.slice(0, 9);
+  let out = '+998';
+  if (d.length > 0) out += ' ' + d.slice(0, 2);
+  if (d.length > 2) out += ' ' + d.slice(2, 5);
+  if (d.length > 5) out += ' ' + d.slice(5, 7);
+  if (d.length > 7) out += ' ' + d.slice(7, 9);
+  return out;
 }
 
 /* -------------------- Init on DOM ready -------------------- */
@@ -199,6 +209,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (f) f.addEventListener('submit', handleApplySubmit);
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeApply(); });
+
+  // Live phone formatter — UZ +998
+  const phoneEl = document.getElementById('f-phone');
+  if (phoneEl) {
+    phoneEl.addEventListener('input', (e) => {
+      const cursorAtEnd = e.target.selectionStart === e.target.value.length;
+      e.target.value = formatUzPhone(e.target.value);
+      if (cursorAtEnd) e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+    });
+    phoneEl.addEventListener('focus', (e) => { if (!e.target.value) e.target.value = '+998 '; });
+  }
 });
 
 window.openApply = openApply;
