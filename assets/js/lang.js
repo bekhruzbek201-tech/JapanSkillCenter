@@ -59,8 +59,10 @@ const translations = {
     sec_agro_p: "Bog'dorchilik va chorvachilik. Tabiat bilan ishlashni xush ko'ruvchilar uchun barqaror va maqbul tanlov.",
     sec_hotel_h: "Mehmonxona Xizmati (宿泊業)", sec_hotel_sal: "¥165,000 : ¥235,000",
     sec_hotel_p: "Mijozlar bilan muomala va xizmat ko'rsatish turlari. Sharqona Omotenashi xizmat tamoyillari.",
-    sec_it_h: "Anime va IT Sohasi", sec_it_sal: "¥200,000 : ¥350,000",
-    sec_it_p: "Tokyodagi anime kompaniyalarida ishlash imkoniyati. JLPT N4 darajasi va ijodiy portfel talab etiladi.",
+    sec_anime_h: "Anime / Manga (アニメ)", sec_anime_sal: "¥200,000 : ¥350,000",
+    sec_anime_p: "Tokyodagi anime va manga studiyalarida ishlash imkoniyati. JLPT N4+ darajasi, rassomchilik iqtidori va portfel talab etiladi.",
+    sec_it_h: "IT Engineer (ITエンジニア)", sec_it_sal: "¥400,000 : ¥800,000",
+    sec_it_p: "Yaponiyaning yetakchi IT kompaniyalarida dasturchi (frontend, backend, mobile, DevOps). Engineer/Specialist vizasi. JLPT N3+ va texnik portfel talab qilinadi.",
 
     // Requirements
     req_tag: "Talablar",
@@ -173,8 +175,10 @@ const translations = {
     sec_agro_p: "Садоводство и животноводство. Надежный выбор для кандидатов, любящих природу.",
     sec_hotel_h: "Гостиничный бизнес (宿泊業)", sec_hotel_sal: "¥165,000 : ¥235,000",
     sec_hotel_p: "Служба приёма гостей отеля. Обучение философии японского гостеприимства Омотенаши.",
-    sec_it_h: "Аниме и IT", sec_it_sal: "¥200,000 : ¥350,000",
-    sec_it_p: "Новое направление для работы в токийских медиастудиях. Необходим хороший уровень языка и портфолио.",
+    sec_anime_h: "Аниме / Манга (アニメ)", sec_anime_sal: "¥200,000 : ¥350,000",
+    sec_anime_p: "Работа в токийских аниме- и манга-студиях. Требуются язык JLPT N4+, художественные навыки и портфолио.",
+    sec_it_h: "IT-инженер (ITエンジニア)", sec_it_sal: "¥400,000 : ¥800,000",
+    sec_it_p: "Разработчик (frontend, backend, mobile, DevOps) в ведущих IT-компаниях Японии. Виза Engineer/Specialist. Требуется JLPT N3+ и техническое портфолио.",
 
     req_tag: "Требования",
     req_title: "Кто может подать заявку",
@@ -273,8 +277,10 @@ const translations = {
     sec_agro_p: "持続可能な農業技術の実修。",
     sec_hotel_h: "宿泊業", sec_hotel_sal: "¥165,000 : ¥235,000",
     sec_hotel_p: "最高水準の『おもてなし』を理解し実践します。",
-    sec_it_h: "アニメ・IT関連", sec_it_sal: "¥200,000 : ¥350,000",
-    sec_it_p: "クリエイティブスキルの発展と語学力を組み合わせた新たな分野。",
+    sec_anime_h: "アニメ・マンガ", sec_anime_sal: "¥200,000 : ¥350,000",
+    sec_anime_p: "東京のアニメ・マンガスタジオでの勤務。JLPT N4+、画力・ポートフォリオが必要です。",
+    sec_it_h: "ITエンジニア", sec_it_sal: "¥400,000 : ¥800,000",
+    sec_it_p: "日本の主要IT企業でのエンジニア職（フロントエンド、バックエンド、モバイル、DevOps）。「技術・人文知識・国際業務」ビザ。JLPT N3+と技術ポートフォリオが必要です。",
 
     req_tag: "応募条件",
     req_title: "申請に必要な基準",
