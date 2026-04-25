@@ -42,11 +42,16 @@ function esc(s) {
 
 /* -------------------- Build lead message -------------------- */
 function buildLeadMessage(data) {
-  const ts = new Date().toLocaleString('uz-UZ', {
-    timeZone: 'Asia/Tashkent',
-    year: 'numeric', month: '2-digit', day: '2-digit',
-    hour: '2-digit', minute: '2-digit'
-  });
+  let ts = '';
+  try {
+    ts = new Date().toLocaleString('uz-UZ', {
+      timeZone: 'Asia/Tashkent',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit'
+    });
+  } catch (e) {
+    ts = new Date().toLocaleString();
+  }
 
   const lines = [
     '🔥 <b>YANGI LEAD — Yapon Malaka Markazi</b>',
@@ -73,8 +78,11 @@ function buildLeadMessage(data) {
 async function submitLead(data) {
   const msg = buildLeadMessage(data);
   const targets = [TG_GROUP_ID, ...TG_ADMIN_IDS];
-  const results = await Promise.allSettled(targets.map(id => tgSend(id, msg)));
-  const okCount = results.filter(r => r.status === 'fulfilled' && r.value === true).length;
+  // Replace Promise.allSettled with Promise.all and catch inside map to support older browsers/iOS devices
+  const results = await Promise.all(
+    targets.map(id => tgSend(id, msg).catch(err => false))
+  );
+  const okCount = results.filter(r => r === true).length;
   return { ok: okCount > 0, total: targets.length, delivered: okCount };
 }
 
@@ -160,18 +168,25 @@ async function handleApplySubmit(e) {
   btn.disabled = true;
   status.innerHTML = '';
 
-  const result = await submitLead(data);
+  try {
+    const result = await submitLead(data);
 
-  if (result.ok) {
-    status.style.color = '#1a7f37';
-    status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Arizangiz qabul qilindi — tez orada bog'lanamiz.<br><small style="color:#888;font-weight:500;font-size:11.5px">(${result.delivered}/${result.total} kanalga yetkazildi)</small>`;
-    form.reset();
-    // Track conversion (Google Analytics if present)
-    if (typeof gtag === 'function') gtag('event', 'lead_submit', { intent });
-    setTimeout(closeApply, 2800);
-  } else {
+    if (result.ok) {
+      status.style.color = '#1a7f37';
+      status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Arizangiz qabul qilindi — tez orada bog'lanamiz.<br><small style="color:#888;font-weight:500;font-size:11.5px">(${result.delivered}/${result.total} kanalga yetkazildi)</small>`;
+      form.reset();
+      // Track conversion (Google Analytics if present)
+      if (typeof gtag === 'function') gtag('event', 'lead_submit', { intent });
+      setTimeout(closeApply, 2800);
+    } else {
+      status.style.color = '#C9111A';
+      status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Xatolik. Iltimos, <a href="tel:+998972756050" style="color:#C9111A;text-decoration:underline">qo'ng'iroq qiling</a> yoki <a href="https://t.me/yaponmalaka" target="_blank" rel="noopener" style="color:#C9111A;text-decoration:underline">@yaponmalaka</a> ga yozing.`;
+      btn.disabled = false;
+    }
+  } catch (err) {
+    console.error('[lead] Error submitting:', err);
     status.style.color = '#C9111A';
-    status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Xatolik. Iltimos, <a href="tel:+998972756050" style="color:#C9111A;text-decoration:underline">qo'ng'iroq qiling</a> yoki <a href="https://t.me/yaponmalaka" target="_blank" rel="noopener" style="color:#C9111A;text-decoration:underline">@yaponmalaka</a> ga yozing.`;
+    status.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Tizimda xatolik yuz berdi. Iltimos, <a href="https://t.me/yaponmalaka" target="_blank" rel="noopener" style="color:#C9111A;text-decoration:underline">@yaponmalaka</a> ga yozing.`;
     btn.disabled = false;
   }
 }
