@@ -1,0 +1,25 @@
+# ─── Dev artifacts (mined into website content; not for public repo) ─────────
+chat/
+pdf_text.txt
+pdf_p*.png
+JapanA3.pdf
+
+# ─── OS / editor noise ───────────────────────────────────────────────────────
+Thumbs.db
+.DS_Store
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.windsurf/
+*.sublime-*
+
+# ─── Logs / temp ─────────────────────────────────────────────────────────────
+*.log
+tmp/
+.cache/
+node_modules/

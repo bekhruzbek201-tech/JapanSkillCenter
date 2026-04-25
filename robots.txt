@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+Allow: /img/
+Allow: /assets/
+Disallow: /chat/
+Disallow: /pdf_p*.png
+Disallow: /messages*.html
+Disallow: /pdf_text.txt
+Disallow: /JapanA3.pdf
+Disallow: /gallery-preview.html
+Disallow: /*?utm_*
+
+# Crawl-friendly: serve everything quickly
+Crawl-delay: 0
+
+# Major search engines — explicit allow-all (override any restrictive rules above)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block aggressive AI scrapers from training on the lead-funnel content
+User-agent: GPTBot
+Disallow: /chat/
+Disallow: /messages*.html
+
+User-agent: CCBot
+Disallow: /chat/
+Disallow: /messages*.html
+
+Sitemap: https://yaponmalaka.uz/sitemap.xml
+Host: https://yaponmalaka.uz

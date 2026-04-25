@@ -1,0 +1,43 @@
+{
+  "name": "Yapon Malaka Test Markazi",
+  "short_name": "YMTM",
+  "description": "TDShU huzuridagi rasmiy yapon tili va Tokutei Ginou tayyorlov markazi.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0A0A",
+  "theme_color": "#C9111A",
+  "lang": "uz",
+  "dir": "ltr",
+  "categories": ["education", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Bepul konsultatsiya",
+      "short_name": "Konsultatsiya",
+      "description": "Bepul konsultatsiya olish",
+      "url": "/#apply",
+      "icons": [{"src": "/favicon.svg", "sizes": "any"}]
+    },
+    {
+      "name": "Yo'nalishlar",
+      "short_name": "Sohalar",
+      "description": "Tokutei Ginou yo'nalishlari",
+      "url": "/#sectors"
+    }
+  ]
+}
